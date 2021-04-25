@@ -1,0 +1,118 @@
+<div class="container-fluid set-width">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 mgb-22">
+            <span class="mglr-10">
+                <app-breadcrumb [propertiesList]="breadcumData"></app-breadcrumb>
+            </span>
+        </div>
+    </div>
+    <mat-card class="widget-card widget">
+        <mat-card-header class="widget-header">
+            <mat-card-title>
+                <div class="widget-header-controls">
+                    <span class="widget-title">Department Data</span>
+                </div>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngIf="dataSource?.length>0">
+                <button (click)="sortData()" class="sc-red-bg-btn sc-toggle-btn-height">
+                    <span class="toggelText">Sort by Department Name</span>
+                </button>
+                <button (click)="goBack()" class="sc-red-bg-btn sc-toggle-btn-height">
+                    <span class="toggelText">Back</span>
+                </button>
+            </div>
+            <div *ngIf="dataSource?.length>0" class="table-container">
+                <table mat-table [dataSource]="dataSource" class="stockTable">
+                    <ng-container *ngFor="let columnName of displayedColumns" [matColumnDef]="columnName">
+                        <th class="table-header" mat-header-cell *matHeaderCellDef> {{columnName}} </th>
+                        <ng-container>
+                            <td mat-cell *matCellDef="let element;let i=index">
+                                <ng-container
+                                    *ngIf="columnName == 'departmentname' || columnName == 'head' || columnName == 'contactnumber' || columnName == 'hospitalname'">
+                                    {{element[columnName]}}
+                                </ng-container>
+                                <ng-container *ngIf="columnName == 'Edit'">
+                                    <span class="cursor-pointer" (click)="editData(i)">
+                                        <img src="../../../assets/images/edit.svg">
+                                    </span>
+                                </ng-container>
+                                <ng-container *ngIf="columnName == 'Delete'">
+                                    <span class="cursor-pointer" (click)="deleteData(i)">
+                                        <img src="../../../assets/images/delete_black.svg">
+                                    </span>
+                                </ng-container>
+                            </td>
+                        </ng-container>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+            </div>
+            <div *ngIf="dataSource?.length==0" class="no-data-found">
+                <span class="no-data-found-text">No Data Department Data Found !</span>
+            </div>
+            <ng-container *ngIf="hospitalEditFromFlag">
+                <form [formGroup]="departmentForm">
+                    <div class="input-form">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input style="width: 200px;height: 30px;" class="form-control" type="text"
+                                    placeholder="Enter Department Name" formControlName="departmentname">
+                            </div>
+                            <span class="error-text"
+                                *ngIf="departmentname.hasError('required') && departmentname.touched">Department Name is
+                                required
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <input style="width: 200px;height: 30px;" class="form-control" type="text"
+                                    placeholder="Enter Head Name" formControlName="head">
+                            </div>
+                            <span class="error-text"
+                                *ngIf="head.hasError('required') && head.touched">Head Name is
+                                required
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <input style="width: 200px;height: 30px;" class="form-control" type="text"
+                                    placeholder="Enter Phone Number" formControlName="contactnumber">
+                            </div>
+                            <span class="error-text"
+                                *ngIf="departmentForm.controls['contactnumber'].hasError('pattern') && !contactnumber.hasError('required')">
+                                Please Enter a valid phone number
+                            </span>
+                            <span class="error-text"
+                                *ngIf="contactnumber.hasError('required') && contactnumber.touched">Contact Number is
+                                required</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mt-3">
+                                <input style="width: 200px;height: 30px;" class="form-control" type="text"
+                                    placeholder="Enter Hospital Name" formControlName="hospitalname">
+                            </div>
+                            <span class="error-text"
+                                *ngIf="hospitalname.hasError('required') && hospitalname.touched">Hospital Name is
+                                required
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 formButtons">
+                                <button  class="sc-red-bg-btn sc-toggle-btn-height">
+                                    <span class="toggelText">Discard</span>
+                                </button>
+                                <button (click)='saveHospitalData()' [disabled]="departmentForm.invalid"
+                                    class="sc-red-bg-btn sc-toggle-btn-height">
+                                    <span class="toggelText">Save</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </ng-container>
+        </mat-card-content>
+    </mat-card>
+</div>

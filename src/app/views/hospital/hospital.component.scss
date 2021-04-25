@@ -1,0 +1,66 @@
+::ng-deep.widget-card .mat-card-header-text{
+    width: 100%;
+    margin: 0;
+}
+::ng-deep.widget-card .mat-card-header-text .mat-card-title{
+    margin-bottom: 0px;
+}
+.widget{
+    top: 10px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 4px 6px #00000008;
+    border: 1px solid #E5E5E5;
+    border-radius: 6px;
+    opacity: 1;
+    padding: 0 0 10px !important;
+}
+.widget-header{
+    height: 51px;
+    border-bottom:1px solid #E5E5E5;
+    opacity: 1;;
+}
+.widget-header-controls{
+    width: 100%;
+    margin-top: 13.5px;
+}
+.widget-title{
+    text-align: left;
+    font: normal normal bold 16px/22px Open Sans;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 0.7;
+    margin-left: 24px;
+}
+.stockTable {
+    width: 100%;
+    box-shadow: none;
+}
+.table-container{
+    width: 100%;
+    min-height: 100px;
+    overflow: auto;
+}
+.table-header{
+    width: 25%;
+    background: gray;
+    color: white;
+    font-size: 14px;
+}
+.no-data-found{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px !important;
+}
+.no-data-found-text{
+    text-align: left;
+    font: normal normal bold 13px/22px Open Sans;
+    letter-spacing: 0px;
+    color: #000000;
+    opacity: 0.5;
+}
+.navigate{
+    color: #3181FF;
+    cursor: pointer;
+}

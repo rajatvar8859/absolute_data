@@ -1,0 +1,16 @@
+<span>
+    <span (click)="navigateToBack()" class="breadcrumb-back" *ngIf="propertiesList.length > 0"
+        (mouseenter)=onHover(true) (mouseleave)=onHover(false)>
+        <img *ngIf="!isHover" src="../../../../assets//images/arrow_left.svg">
+        <img *ngIf="isHover" src="../../../../assets//images/left-arrow_red.svg">
+    </span>
+
+    <span class="bread-crumb" *ngFor="let item of propertiesList; let i = index">
+        <span (click)="navigate(item.url)" [ngClass]="{'text-selected':item.active === true }"
+            class="breadcrumb-name">{{ item.name}}
+        </span>
+        <span class="breadcrumb-icon" *ngIf="i + 1 != propertiesList.length">
+            <img src="../../../../assets//images/Path 222.svg">
+        </span>
+    </span>
+</span>

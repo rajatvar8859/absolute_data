@@ -1,0 +1,128 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #F7F9FB;
+  overflow-x: hidden;
+}
+
+.imageClass{
+    height: 200px;
+}
+.set-width {
+    margin-left: 18px;
+    width: calc(100% - 50px);
+  }
+.mgb-22 {
+    margin-bottom: 22px;
+}  
+.mglr-10 {
+    margin: 0px 10px;
+}
+.btn-height {
+    height: 32px;
+    margin-right: 6px;
+}
+.mgr-20 {
+  margin-right: 20px;
+}
+.mgl-30 {
+  margin-left: 20px;
+}
+.mrt{
+  margin-top: 3px;
+}
+.currency-btn {
+  color: #E64552;
+  border-radius: 4px;
+  border: 1px solid #E64552;
+}
+.currencyText {
+  cursor: pointer;
+  text-align: left;
+  font: normal normal 600 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #E64552;
+  opacity: 1;
+  padding: 5px;
+}
+::ng-deep .mat-menu-content {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+.mat-menu-item {
+  line-height: 35px !important;
+  height: 35px !important;
+  outline: none;
+}
+::ng-deep .mat-menu-panel{
+  margin-top: 4px;
+  margin-left: -16px;
+}
+.no-data{
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.no-data-text{
+    display: grid;
+}
+.textClass{
+    text-align: center;
+    font: normal normal 600 15px/17px Open Sans;
+}
+.cardBackground{
+    color: #E64552;
+    border-top: 1px solid #E64552;
+    background: #efefef;
+    cursor: pointer;
+    padding: 5px;
+}
+.cardText{
+    font: normal normal 600 12px/17px Open Sans;
+}
+.sc-red-bg-btn {
+  color: white;
+  background-color: red;
+  border-radius: 4px;
+  border: none;
+}
+.sc-toggle-btn-height{
+  height: 32px;
+  margin-right: 30px;
+  width: 202px;
+  margin: 10px;
+}
+.toggelText {
+  text-align: left;
+  font: normal normal 600 14px/19px Open Sans;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  padding: 5px;
+}
+.cursor-pointer{
+  cursor: pointer;
+}
+.error-text{    
+  margin-left: 13px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  color: red;
+  font: normal normal 500 11px/19px Open Sans;
+}
+.formButtons{
+  text-align: end;
+  margin-top: 10px;
+}
+.input-form{
+  padding: 20px;
+  margin-top: 10px;
+}
